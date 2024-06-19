@@ -20,16 +20,16 @@
       :size="4"
       :movement="-0.5"
       :font-size="1.5"
-      icon="sync" />
+      icon="pi-sync" />
 
     <!-- help btn -->
     <button-item
-      icon="fa-question"
+      icon="pi-question"
       @click="showModal" />
 
     <!-- modal -->
     <modal-item
-      v-if="modalVisible"
+      :visible="modalVisible"
       @cancel="hideModal">
       <template v-slot:header>
         About the app
@@ -38,7 +38,7 @@
         Mix three colors to create the perfect one!
       </template>
       <template v-slot:footer>
-        <button-item icon="fa-thumbs-up" />
+        <button-item icon="pi-thumbs-up" />
       </template>
     </modal-item>
   </div>

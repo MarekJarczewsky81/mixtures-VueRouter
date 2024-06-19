@@ -24,7 +24,6 @@ export default {
   components: {
     AppHeader,
     AppMenu
-
   }
 }
 </script>
