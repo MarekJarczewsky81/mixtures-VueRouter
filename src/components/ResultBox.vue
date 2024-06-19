@@ -11,6 +11,9 @@
       :size="15" />
     </div>
 
+    <!-- rgb values -->
+    <p>{{ rgbValues }}</p>
+
     <!-- refresh btn -->
     <button-item
       @click="$emit('refresh')"
@@ -58,6 +61,10 @@ export default {
   },
   computed: {
     mixtureEffectFill () {
+      const [redCol, greenCol, blueCol] = this.mixtures.map(item => Math.floor(item.amount * 2.5))
+      return `rgb(${redCol}, ${greenCol}, ${blueCol})`
+    },
+    rgbValues () {
       const [redCol, greenCol, blueCol] = this.mixtures.map(item => Math.floor(item.amount * 2.5))
       return `rgb(${redCol}, ${greenCol}, ${blueCol})`
     }

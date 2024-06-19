@@ -15,7 +15,7 @@
       <footer class="modal__footer">
         <slot name="footer" />
         <button-item
-          icon="pi sync"
+          icon="sync"
           @click="$emit('cancel')" />
       </footer>
 

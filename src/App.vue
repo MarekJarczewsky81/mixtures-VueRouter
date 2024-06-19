@@ -4,11 +4,10 @@
       <!-- header -->
       <app-header />
       <!-- menu -->
-      <app-menu @navigate="currentView = $event" />
+      <app-menu />
+      <!-- router view -->
+      <router-view />
       <!-- content -->
-      <main>
-        <component :is="currentView" />
-      </main>
     </div>
   </div>
 </template>
@@ -17,23 +16,15 @@
 import './styles/global.scss'
 import AppHeader from './components/AppHeader'
 import AppMenu from './components/AppMenu'
-import Home from './views/Home.vue'
-import Mixin from './views/Mixin.vue'
-import About from './views/About.vue'
+
+
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppMenu,
-    Home,
-    Mixin,
-    About
-  },
-  data() {
-    return {
-      currentView: 'Home'
-    };
+    AppMenu
+
   }
 }
 </script>

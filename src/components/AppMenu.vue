@@ -1,10 +1,10 @@
 <template>
   <Menubar :model="items" class="menuBar">
     <template #item="{ item, props }">
-      <a v-ripple :href="item.to" v-bind="props.action" @click.prevent="navigate(item.to)">
+      <router-link :to="item.to" v-bind="props.action">
         <span :class="item.icon" />
         <span class="ml-2">{{ item.label }}</span>
-      </a>
+      </router-link>
     </template>
   </Menubar>
 </template>
@@ -22,26 +22,21 @@ export default {
       items: [
         {
           label: 'Home',
-          icon: 'pi pi-home',
-          to: 'Home'
+          icon: 'pi pi-fw pi-home',
+          to: '/'
         },
         {
           label: 'Mixin',
-          icon: 'pi pi-cog',
-          to: 'Mixin'
+          icon: 'pi pi-fw pi-filter',
+          to: '/mixin'
         },
         {
           label: 'About',
-          icon: 'pi pi-info-circle',
-          to: 'About'
+          icon: 'pi pi-fw pi-info',
+          to: '/about'
         }
       ]
     };
-  },
-  methods: {
-    navigate(view) {
-      this.$emit('navigate', view);
-    }
   }
 };
 </script>
