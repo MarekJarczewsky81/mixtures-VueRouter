@@ -1,0 +1,1 @@
+Accessibility (A11y): Rozważ dodanie atrybutów dostępności, takich jak aria-label, aby poprawić dostępność swoich komponentów.

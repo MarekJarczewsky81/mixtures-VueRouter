@@ -7,7 +7,6 @@
       <app-menu />
       <!-- router view -->
       <router-view />
-      <!-- content -->
     </div>
   </div>
 </template>
@@ -16,14 +15,14 @@
 import './styles/global.scss'
 import AppHeader from './components/AppHeader'
 import AppMenu from './components/AppMenu'
-
-
+import PageTitle from './components/PageTitle.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppMenu
+    AppMenu,
+    PageTitle
   }
 }
 </script>

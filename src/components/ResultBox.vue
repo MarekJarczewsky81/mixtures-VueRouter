@@ -12,7 +12,7 @@
     </div>
 
     <!-- rgb values -->
-    <p>{{ rgbValues }}</p>
+    <p>{{ mixtureEffectFill }}</p>
 
     <!-- refresh btn -->
     <button-item
@@ -24,8 +24,18 @@
 
     <!-- help btn -->
     <button-item
+      :size="4"
       icon="pi-question"
       @click="showModal" />
+
+    <!-- share btn -->
+    <router-link :to="shareUrl">
+      <button-item
+        icon="pi pi-share-alt"
+        :size="4"
+        :movement="-0.5"
+        :font-size="1.5" />
+    </router-link>
 
     <!-- modal -->
     <modal-item
@@ -64,9 +74,9 @@ export default {
       const [redCol, greenCol, blueCol] = this.mixtures.map(item => Math.floor(item.amount * 2.5))
       return `rgb(${redCol}, ${greenCol}, ${blueCol})`
     },
-    rgbValues () {
-      const [redCol, greenCol, blueCol] = this.mixtures.map(item => Math.floor(item.amount * 2.5))
-      return `rgb(${redCol}, ${greenCol}, ${blueCol})`
+    shareUrl () {
+      const [red, green, blue] = this.mixtures.map(item => Math.floor(item.amount * 2.5));
+      return `/color/${red}/${green}/${blue}`;
     }
   },
   components: {
@@ -78,7 +88,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .flask__wrapper {
   width: fit-content;
   font-size: 20rem;

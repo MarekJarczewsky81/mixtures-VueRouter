@@ -5,7 +5,6 @@ const modalMixin = {
   methods: {
     showModal () {
       this.modalVisible = true
-    console.log('tekst')
     },
 
 

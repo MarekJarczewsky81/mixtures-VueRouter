@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1>About</h1>
+    <h1>Kodilla - Kurs Vue - Marek Jarczewski</h1>
   </div>
 </template>
 
